@@ -1,13 +1,15 @@
 <template>
-	<div class="post" v-for="obj in postsList">
-		<div>Название: {{ obj.title }}</div>
-		<div>Описание: {{ obj.body }}</div>
+	<div>
+		<h3>Список пользователей</h3>
+		<post-item v-for="post in postsList" :obj="post" />
 	</div>
 </template>
 
 
 <script>
+import PostItem from "@/components/PostItem.vue";
 export default {
+	components: {PostItem},
 	props: {
 		postsList: {
 			type: Array,
